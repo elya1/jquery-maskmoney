@@ -177,6 +177,9 @@
                         leadingZeros = new Array((settings.precision + 1) - decimalPart.length).join(0);
                         newValue += settings.decimal + leadingZeros + decimalPart;
                     }
+                    
+                    $input.trigger('change.maskMoney', newValue); // USE -> $element.on('change.maskMoney', function(e, newValue){});
+                    
                     return setSymbol(newValue);
                 }
 
